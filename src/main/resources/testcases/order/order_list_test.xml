@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:my="http://sammor.javaeye.com/schema/tags"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+       default-lazy-init="false">
+
+    <bean id="com.hanson.order.list" class="com.hanson.test.domain.TestDomain">
+        <property name="url" value="order/list"></property>
+        <property name="no" value="98.8"></property>
+        <property name="title" value="状态查询订单"></property>
+        <property name="desc" value=""></property>
+        <property name="result"  value=""></property>
+        <property name="request">
+            <list>
+                <my:reqParam key="token" type="String" allowEmpty="false" name="token" desc=" " value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="  />
+                <my:reqParam key="pageno" type="int" allowEmpty="false" name="页数" desc=" " value="1"  />
+                <my:reqParam key="pagesize" type="int" allowEmpty="false" name="显示行数" desc=" " value="10"  />
+                <my:reqParam key="status" type="int" allowEmpty="false" name="订单状态" desc=" " value="0"  />
+            </list>
+        </property>
+        <property name="response">
+            <list>
+                <my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+                <my:resParam key="msg" type="String"  name="返回提示信息" desc="" value="没有数据记录" />
+                <my:resParam key="result" type="list"   name="返回结果集" value="" >
+                   <my:resParam key="orderid" type="int"  name="订单编号" value=""  />
+                    <my:resParam key="order_no" type="int"  name="订单编号" desc="用于显示到页面" value=""  />
+        
+                  <my:resParam key="lastdate" type="String"  name="最后变更时间" value=""  />
+                  <my:resParam key="score" type="int"  name="获得积分" value=""  />
+                  	 <my:resParam key="goodsid" type="int"  name="商品编号" value=""  />
+                  	 <my:resParam key="detailid" type="int"  name="订单详情编号" value=""  />
+                  	 <my:resParam key="specid" type="int"  name="商品规格编号" value=""  />
+                    <my:resParam key="title" type="String"  name="商品名称" value=""  />
+                    <my:resParam key="sub_title" type="String"  name="商品规格名称" value=""  />
+                    <my:resParam key="icon" type="String"  name="商品图标" desc="url地址" value=""  />
+                <my:resParam key="status" type="int" allowEmpty="false" name="订单状态" desc=" " value="0"  />
+         
+                  <my:resParam key="price_cash" type="double"  name="现金单价" desc="单位：元" value=""  />
+                    <my:resParam key="price_score" type="int"  name="积分单价" value=""  />
+                    <my:resParam key="quality" type="int"  name="购买数量" value=""  />
+                
+                  <my:resParam key="total_cash" type="double"  name="总计现金金额" desc="单位元" value=""  />
+                  <my:resParam key="total_score" type="int"  name="总计所需积分"   value=""  />
+                  <my:resParam key="buytype" type="int"  name="购买方式"   value=""  />
+               
+                </my:resParam>
+            </list>
+        </property>
+        <property name="testCases">
+            <!-- 可以配置若干的测试用例 -->
+            <list>
+                <bean class="com.hanson.test.domain.TestCaseDomain">
+                    <property name="code" value="001"></property>
+                    <property name="title" value="查询未支付订单"></property>
+                    <property name="desc" value="查询未支付订单" ></property>
+                    <property name="successCode" value="0000"></property>
+                    <property name="param">
+                        <map>
+                            <entry key="token" value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="></entry>
+                            <entry key="pageno"  value="1"  />
+                            <entry key="pagesize"  value="1"  />
+                            <entry key="status"  value="0"  />
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

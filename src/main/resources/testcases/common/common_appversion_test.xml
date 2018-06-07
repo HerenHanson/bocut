@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:my="http://sammor.javaeye.com/schema/tags"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+	default-lazy-init="false">
+
+	<bean id="com.hanson.common.app.version" class="com.hanson.test.domain.TestDomain">
+		<property name="url" value="app/version/{apptype}"></property>
+		<property name="no" value="1.1"></property>
+		<property name="title" value="获取APP版本"></property>
+		<property name="desc" value="根据APP类型获得版本信息"></property>
+		<property name="result"  value='{"code":"0000","msg":"成功","result":{"content":"测试数据","lowestversion":"1.0.0","appversion":"1.0.1","url":"127.0.0.1"}}'></property>
+		<property name="request">
+		<list>
+				<my:reqParam key="apptype" type="String" allowEmpty="false" name="手机类型" desc="1安卓，2苹果" value="1"  />	
+				<!-- <my:reqParam key="mobile" type="String" allowEmpty="false" name="手机信息" desc="如小米4，iphone5等" value="小米4"  />
+				<my:reqParam key="appversion" type="String" allowEmpty="false" name="App版本号" value="2.15"  />
+				<my:reqParam key="osversion" type="String" allowEmpty="false" name="手机操作系统类型" desc="0安卓，1苹果" value="0"  />
+				<my:reqParam key="lng" type="String"   name="用户坐标经度" value=""  />				 
+				<my:reqParam key="lat" type="String"  name="用户坐标纬度" value=""  deprecated="true"/>								 
+				<my:reqParam key="acctype" type="String" allowEmpty="false" name="登录方式" desc="00安卓，01苹果,11微信登录" value="00"  />		
+				<my:reqParam key="unid" type="String" allowEmpty="false" name="用户唯一标识" desc="游客登录时为本机unid,第三方账号登录时为第三方授权后返回的用户唯一识别符" value="12546855255"  />		
+				<my:reqParam key="phonecode" type="String" allowEmpty="false" name="设备唯一识别号" value="sadaswdasd12345" addtion="true"  />								
+		 --></list>
+		</property>
+		<property name="response">
+			<list>
+				<my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+				<my:resParam key="msg" type="String"  name="返回提示信息" desc="如没有找到该用户等" value="没有数据记录" />
+				<my:resParam key="result" type="map"   name="返回结果集" value="" >
+					<my:resParam key="content" type="String" allowEmpty="true" name="升级说明" value=""  />
+					<my:resParam key="url" type="String"  name="下载地址" desc="" value=""  />
+					<my:resParam key="appversion" type="String"  name="当前版本号" desc="更新后当前APP版本号" value="0.0.0"  />
+					<my:resParam key="lowestversion" type="String"  name="最低可用版本号" desc="当前APP版本号低于该值时，需强制更新" value="0.0.0"  />
+				</my:resParam>
+				
+			</list>
+		</property>
+		<property name="testCases">
+		<!-- 可以配置若干的测试用例 -->
+			<list>
+				<bean class="com.hanson.test.domain.TestCaseDomain">
+					<property name="code" value="001"></property>
+					<property name="title" value="测试获取安卓版本"></property>
+					<property name="desc" value="测试获取安卓版本" ></property>
+					<property name="successCode" value="0000"></property>
+					<property name="param">
+						<map>
+							<entry key="apptype" value="1" ></entry>
+						</map>
+					</property>
+				</bean>
+				
+			</list>
+		</property>
+	</bean>
+
+</beans>

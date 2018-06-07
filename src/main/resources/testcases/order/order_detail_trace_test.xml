@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:my="http://sammor.javaeye.com/schema/tags"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+       default-lazy-init="false">
+
+    <bean id="com.hanson.order.detail.trace" class="com.hanson.test.domain.TestDomain">
+        <property name="url" value="order/trace"></property>
+        <property name="no" value="98.10"></property>
+        <property name="modifyFlag" value="new"></property>
+        <property name="title" value="根据订单详情编号查询物流信息"></property>
+        <property name="desc" value=""></property>
+        <property name="result"  value=""></property>
+        <property name="request">
+            <list>
+                <my:reqParam key="token" type="String" allowEmpty="false" name="token" desc=" " value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="  />
+                <my:reqParam key="detailid" type="int" allowEmpty="false" name="订单详情编号" desc=" " value="1"  />
+            </list>
+        </property>
+        <property name="response">
+            <list>
+                <my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+                <my:resParam key="msg" type="String"  name="返回提示信息" desc="" value="没有数据记录" />
+                <my:resParam key="result" type="map"   name="返回结果集" value="" >
+                	<my:resParam key="exp_company" type="String"  name="快递公司" value="申通快递"  />
+                	<my:resParam key="exp_no" type="String"  name="时间" value="7877899888899"  />
+                	<my:resParam key="exp_detail" type="list"  name="订单跟踪详情" value="" >
+                		<my:resParam key="time" type="String"  name="时间" value="2018-04-11 12:00:00"  />
+                  		<my:resParam key="scantype" type="String"  name="扫描类型"  value="收件"  />
+                  		<my:resParam key="memo" type="String"  name="跟踪记录" value="由【广东广州公司】发往【广西柳州中转部】"  />
+                	</my:resParam>
+                </my:resParam>
+                  
+            </list>
+        </property>
+        <property name="testCases">
+            <!-- 可以配置若干的测试用例 -->
+            <list>
+                <bean class="com.hanson.test.domain.TestCaseDomain">
+                    <property name="code" value="001"></property>
+                    <property name="title" value="查询未支付订单"></property>
+                    <property name="desc" value="查询未支付订单" ></property>
+                    <property name="successCode" value="0000"></property>
+                    <property name="param">
+                        <map>
+                            <entry key="token" value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="></entry>
+                            <entry key="pageno"  value="1"  />
+                            <entry key="pagesize"  value="1"  />
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

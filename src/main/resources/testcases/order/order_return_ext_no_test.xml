@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:my="http://sammor.javaeye.com/schema/tags"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+       default-lazy-init="false">
+
+    <bean id="com.hanson.order.detail.return.request.extno" class="com.hanson.test.domain.TestDomain">
+        <property name="url" value="order/returnExtNo"></property>
+        <property name="no" value="98.14"></property>
+        <property name="modifyFlag" value="new"></property>
+        <property name="title" value="填写退货快递单接口"></property>
+        <property name="desc" value=""></property>
+        <property name="result"  value=""></property>
+        <property name="request">
+            <list>
+                <my:reqParam key="token" type="String" allowEmpty="false" name="token" desc=" " value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="  />
+                <my:reqParam key="return_id" type="int" allowEmpty="false" name="退货订单号" desc=" " value="1577"  />
+                <my:reqParam key="exp_no" type="String" allowEmpty="false" name="退货快递订单号" desc="" value="18778347823"  />
+            </list>
+        </property>
+        <property name="response">
+            <list>
+                <my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+                <my:resParam key="msg" type="String"  name="返回提示信息" desc="" value="没有数据记录" />
+            </list>
+        </property>
+        <property name="testCases">
+            <!-- 可以配置若干的测试用例 -->
+            <list>
+                <bean class="com.hanson.test.domain.TestCaseDomain">
+                    <property name="code" value="001"></property>
+                    <property name="title" value="填写退货快递单接口"></property>
+                    <property name="desc" value="填写退货快递单接口" ></property>
+                    <property name="successCode" value="0000"></property>
+                    <property name="param">
+                        <map>
+                            <entry key="token" value="EpGeFYYr8/FznMnb6lRW5p40jla/zRcMEZt4ti9nSVei+6hY1kvfjmGga/vQpGiGycQZXZMRBCHpG83tkNvHhA=="></entry>
+                            <entry key="return_id"  value="2333"  />
+                            <entry key="exp_no"  value="112312312312312"  />
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

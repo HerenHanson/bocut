@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:my="http://sammor.javaeye.com/schema/tags"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+	default-lazy-init="false">
+
+	<bean id="com.song.mall.shopping.controller.ShoppingController.cart.list" class="com.hanson.test.domain.TestDomain">
+		<property name="url" value="shopping/cart/list"></property>
+		<property name="no" value="4.5.4"></property>
+		<property name="title" value="查询用户购物车列表"></property>
+		<property name="desc" value="查询用户购物车列表"></property>
+		<property name="result"  value=""></property>
+		<property name="request">
+			<list>
+				<my:reqParam key="token" type="String" allowEmpty="false" name="token" desc="" value="10"  />
+				<my:reqParam key="pageno" type="int" allowEmpty="false" name="页数" desc="" value="" addtion="true" />
+				<my:reqParam key="pagesize" type="int" allowEmpty="false" name="显示行数" desc="" value=""  addtion="true"  />
+			</list>
+		</property>
+		<property name="response">
+			<list>
+				<my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+				<my:resParam key="msg" type="String"  name="返回提示信息" desc="收藏成功" value="" />
+				<my:resParam key="result" type="map"   name="返回结果集" value="" >
+					<my:resParam key="goodsid" type="int" allowEmpty="false" name="商品编号" value=""  />
+					<my:resParam key="specid" type="int" allowEmpty="false" name="商品规格编号" value=""  />
+					<my:resParam key="cid" type="int" allowEmpty="false" name="购物车记录标号" value=""  />
+					<my:resParam key="title" type="String" allowEmpty="false"  name="名称" desc="" value=""  />
+					<my:resParam key="sub_title" type="String" allowEmpty="false"  name="商品规格名称" desc="" value=""  />
+					<my:resParam key="icon" type="String" allowEmpty="false"  name="icon" desc="" value=""  />
+					<my:resParam key="price_cash" type="double"  allowEmpty="false" name="单价" desc="单位元" value=""  />
+					<my:resParam key="price_score" type="int" allowEmpty="false"  name="积分" desc="积分入口显示" value=""  />
+					<my:resParam key="buytype" type="int" allowEmpty="false" name="购买方式" desc="支持的购买方式 :1现金   2积分  4现金且积分  3现金或积分" value=""  />
+					<my:resParam key="quality" type="int" allowEmpty="true" name="购买数量" desc="" value=""  />
+					<my:resParam key="po" type="String" allowEmpty="true" name="商品原价" desc="" value=""  />
+				</my:resParam>
+			</list>
+		</property>
+		<property name="testCases">
+		<!-- 可以配置若干的测试用例 -->
+			<list>
+  <bean class="com.hanson.test.domain.TestCaseDomain">
+                    <property name="code" value="001"></property>
+                    <property name="title" value="查询未支付订单"></property>
+                    <property name="desc" value="查询未支付订单" ></property>
+                    <property name="successCode" value="0000"></property>
+                    <property name="param">
+                        <map>
+                            <entry key="token" value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="></entry>
+                            <entry key="pageno"  value="1"  />
+                            <entry key="pagesize"  value="1"  />
+                        </map>
+                    </property>
+                </bean>
+			
+			</list>
+		</property>
+	</bean>
+
+</beans>

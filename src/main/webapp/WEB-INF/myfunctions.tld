@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+ <tlib-version>1.0</tlib-version>
+ <short-name>hd</short-name>
+ <uri>http://www.snailhd.com/test/functions</uri><!-- 其中，若uri为/WEB-INF/xxx.tld，则无需再下面tomcat中注册 -->
+ <function>
+ 	<name>format</name>
+ 	<function-class>com.hanson.test.util.FormatUtils</function-class>
+ 	<function-signature>java.lang.String format(java.lang.String)</function-signature>
+ </function>
+</taglib>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>乐拼接口调用说明</title>
+	<link rel="stylesheet"
+	href="../css/bootstrap.min.css">
+
+	<script type="text/javascript"
+	src="../js/jquery-3.1.0.min.js"></script>
+
+	<script type="text/javascript"
+	src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript"
+	src="../js/my.full.js"></script>
+	<script type="../js/jsonFormat.js"></script>
+
+
+	<style type="text/css">
+		.api {
+			font-size: 24px;
+			background-color: #F0F8FF;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+		}
+
+		.reqMethod {
+			padding-left:12px;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			background-color: #87CEFA;
+			width: 90px;
+		}
+
+		.apiTitle {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.text1 {
+			font-size: 24px;
+			font-weight: bold;
+		}
+		.apicode{
+			font-size: 12px;			
+			float: right;
+		}
+		.isSuccess{
+			float: right;
+			padding: 5px 10px;
+			background-color: #abc;
+			border-radius:4px;
+		}		
+		.isFail{
+			float: right;
+			padding: 5px 10px;
+			background-color: #abc;
+			border-radius:4px;
+		}
+		
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">乐拼接口调用说明</a>
+			</div>
+			<button class="btn btn-default navbar-right">全局测试</button>
+			
+
+		</nav>
+		<!-- <a name="bookmark1"></a> -->
+		<div style="height: 80px;"></div>
+
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<a name="bookmark1"></a>
+
+
+
+
+				<div style="height:60px;"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<span class="apiTitle">1.1获取当前股指列表<span class="apicode">（功能编号：acc_cashApplyLog）</span></span>
+					</div>
+				</div>
+				<div class="row api">
+					<div class="col-md-2" style="padding: 0"><div class="reqMethod">POST</div></div>
+					<div class="col-md-6">stock/data/cpoint/</div>
+					<div class="col-md-2">自动</div>
+<!-- 					<div class="col-md-1">
+						<button class="btn btn-default " />测试</button>
+					</div> -->
+				</div>
+				<div class="row">
+					<div style="height: 20px;"></div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+				<div class="row">
+					<div class="col-md-12">
+						<span class="apiTitle">1.1获取当前股指列表<span class="apicode">（功能编号：acc_cashApplyLog）</span></span>
+					</div>
+				</div>
+				<div class="row api">
+					<div class="col-md-2" style="padding: 0"><div class="reqMethod">POST</div></div>
+					<div class="col-md-6">stock/data/cpoint/</div>
+					<div class="col-md-2">自动</div>
+<!-- 					<div class="col-md-1">
+						<button class="btn btn-default " />测试</button>
+					</div> -->
+				</div>
+				<div class="row">
+					<div style="height: 20px;"></div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<div class="row">
+					<div class="col-md-12">
+						<span class="apiTitle">1.1获取当前股指列表<span class="apicode">（功能编号：acc_cashApplyLog）</span></span>
+					</div>
+				</div>
+				<div class="row api">
+					<div class="col-md-2" style="padding: 0"><div class="reqMethod">POST</div></div>
+					<div class="col-md-6">stock/data/cpoint/</div>
+					<div class="col-md-2">自动</div>
+<!-- 					<div class="col-md-1">
+						<button class="btn btn-default " />测试</button>
+					</div> -->
+				</div>
+				<div class="row">
+					<div style="height: 20px;"></div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								<div class="row">
+					<div class="col-md-12">
+						<span class="apiTitle">1.1获取当前股指列表<span class="apicode">（功能编号：acc_cashApplyLog）</span></span>
+					</div>
+				</div>
+				<div class="row api">
+					<div class="col-md-2" style="padding: 0"><div class="reqMethod">POST</div></div>
+					<div class="col-md-6">stock/data/cpoint/</div>
+					<div class="col-md-2">自动</div>
+<!-- 					<div class="col-md-1">
+						<button class="btn btn-default " />测试</button>
+					</div> -->
+				</div>
+				<div class="row">
+					<div style="height: 20px;"></div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								001、测试提现申请记录    <span class="isSuccess">成功</span>
+							</div>
+							<div class="panel-body">
+								<h5>json：</h5>
+								<pre>
+{
+	"appmsg":"登录成功",
+	"result":{
+		"birthday":"20151201",
+		"votejoincount":0,
+		"token":"pPAaGMg5GLPlWuZZ3yHRerp0zSA8ipxMJfifM87NI09ltd/dszxuldB2y10ZOxiHbXaj6d5Z0nVb\nuC8xSOPg3uM6D/htbyZGkk4d049cDcPQMMDpmIjN/mDNDgpYD/Tf+whDat1FQcNNS39cRrh6fIZN\nwlA8JofB1PJM5U6b480=",
+		"ticket":0,
+		"mobilesearch":"0",
+		"idsearch":"1",
+		"age":0,
+		"phonecode":"12345879655",
+		"hislevel":4,
+		"totalscore":120,
+		"votemaxwin":0,
+		"confri":"0",
+		"mobile":""
+	},
+	"httpUrl":"http://img.funpete.com/",
+	"appcode":"1"
+}									
+								</pre>
+								<h5>备注：</h5>
+								<pre>
+这是一个备注，你知道？
+								</pre>
+
+							</div>
+
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div id="bingo"></div>
+
+</div>
+
+
+</body>
+
+
+</html>

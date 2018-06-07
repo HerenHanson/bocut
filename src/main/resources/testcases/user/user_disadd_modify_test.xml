@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:my="http://sammor.javaeye.com/schema/tags"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+       default-lazy-init="false">
+
+    <bean id="com.hanson.user.disadd.modify" class="com.hanson.test.domain.TestDomain">
+        <property name="url" value="user/disadd/modify"></property>
+        <property name="no" value="99.4"></property>
+        <property name="title" value="修改地址"></property>
+        <property name="desc" value=""></property>
+        <property name="result"  value=""></property>
+        <property name="request">
+            <list>
+                <my:reqParam name="用户token" key="token" type="String"  desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="地址编号" key="disid" type="int"     desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="收货人" key="realname" type="String"   desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="手机号码" key="mobile" type="String"   desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="详细地址" key="address" type="String"   desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="省编码" key="province" type="String"    desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="市编码" key="city" type="String"      desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="区编码" key="district" type="String"   desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="邮编" key="zipcode" type="String"      desc=" " value=""  allowEmpty="false" />
+                <my:reqParam name="是否默认地址" key="distype" type="String"   desc=" " value=""  allowEmpty="false" />
+            </list>
+        </property>
+        <property name="response">
+            <list>
+                <my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+                <my:resParam key="msg" type="String"  name="返回提示信息" desc="" value="没有数据记录" />
+                <my:resParam key="result" type="int"   name="地址编号" value="" >
+                </my:resParam>
+            </list>
+        </property>
+        <property name="testCases">
+            <!-- 可以配置若干的测试用例 -->
+            <list>
+                <bean class="com.hanson.test.domain.TestCaseDomain">
+                    <property name="code" value="001"></property>
+                    <property name="title" value="获取用户消息列表"></property>
+                    <property name="desc" value="获取用户消息列表" ></property>
+                    <property name="successCode" value="0000"></property>
+                    <property name="param">
+                        <map>
+                            <entry key="token" value="EpGeFYYr8/EBYJDoFsHJCbxdXjoZfSGKH3ii6dc0dB/xl/G/rCFhdxDpSQ6a/AQBycQZXZMRBCFl3alSwQ025g=="  />
+                            <entry key="disid"  value="3"  />
+                            <entry key="realname"  value="哈哈"   />
+                            <entry key="mobile"  value="18008092356"   />
+                            <entry key="address"  value="北三环测试"  />
+                            <entry key="province"  value="140000"   />
+                            <entry key="city"  value="140300"  />
+                            <entry key="district"  value="2"   />
+                            <entry key="zipcode"  value="125626"   />
+                            <entry key="distype"  value="2"   />
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+</beans>

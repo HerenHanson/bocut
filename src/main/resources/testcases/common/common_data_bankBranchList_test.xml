@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:my="http://sammor.javaeye.com/schema/tags"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+	default-lazy-init="false">
+
+	<bean id="com.song.mall.base.controller.DataController.bankBranchList" class="com.hanson.test.domain.TestDomain">
+		<property name="url" value="data/bankBranchList"></property>
+		<property name="no" value="4.0"></property>
+		<property name="title" value="根据银行编号和城市编码获取银行支行信息"></property>
+		<property name="desc" value="根据银行编号和城市编码获取银行支行信息"></property>
+		<property name="result"  value=""></property>
+		<property name="request">
+			<list>
+				<my:reqParam key="bank_code" type="String" allowEmpty="false" name="所属银行号" desc="" value="10"  />	
+				<my:reqParam key="city" type="String" allowEmpty="false" name="所属市区编号" desc="" value="110100"  />
+			</list>
+		</property>
+		<property name="response">
+			<list>
+				<my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+				<my:resParam key="msg" type="String"  name="返回提示信息" desc="成功" value="" />
+				<my:resParam key="result" type="list"   name="返回结果集" value="" >
+					<my:resParam key="bank_branch_code" type="String"  name="开户行号" value=""  />
+					<my:resParam key="bank_branch_name" type="String"  name="支行全称" desc="" value=""  />
+				</my:resParam>
+				
+			</list>
+		</property>
+		<property name="testCases">
+		<!-- 可以配置若干的测试用例 -->
+			<list>
+					<bean class="com.hanson.test.domain.TestCaseDomain">
+					<property name="code" value="001"></property>
+					<property name="title" value="根据银行编号和城市编码获取银行支行信息"></property>
+					<property name="desc" value="根据银行编号和城市编码获取银行支行信息" ></property>
+					
+					<property name="successCode" value="0000"></property>
+					<property name="param">
+						<map>
+
+							<entry key="token" value="10"></entry>
+								</map>
+					</property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+</beans>

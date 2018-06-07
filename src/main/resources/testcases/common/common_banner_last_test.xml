@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:my="http://sammor.javaeye.com/schema/tags"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+ 	http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd 
+ 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+ 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+ 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+ 	http://sammor.javaeye.com/schema/tags http://sammor.javaeye.com/schema/tags/springtag.xsd"
+	default-lazy-init="false">
+
+	<bean id="com.hanson.common.banner.last" class="com.hanson.test.domain.TestDomain">
+		<property name="url" value="banner/last"></property>
+		<property name="no" value="1.4"></property>
+		<property name="title" value="获取最新banner图"></property>
+		<property name="desc" value=""></property>
+		<property name="result"  value=""></property>
+		<property name="request">
+		<list>
+			
+			</list>
+		</property>
+		<property name="response">
+			<list>
+				<my:resParam key="code" type="String" allowEmpty="false" name="返回结果" desc="0000表示请求正确" value="0000" />
+				<my:resParam key="msg" type="String"  name="返回提示信息" desc="如没有找到该用户等" value="没有数据记录" />
+				<my:resParam key="result" type="list"   name="返回结果集" value="" >
+					<my:resParam key="title" type="String"  name="公告标题" value=""  />
+					<my:resParam key="imgurl" type="String"  name="图片地址" desc="" value=""  />
+					<my:resParam key="redirect_url" type="String" allowEmpty="true"  name="跳转地址" desc="用户点击后跳转的目标地址，http地址或者本地路径可能为空或#，代表不执行跳转" />
+			
+				</my:resParam>
+				
+			</list>
+		</property>
+		<property name="testCases">
+		<!-- 可以配置若干的测试用例 -->
+			<list>
+				<bean class="com.hanson.test.domain.TestCaseDomain">
+					<property name="code" value="001"></property>
+					<property name="title" value="获取banner"></property>
+					<property name="desc" value="获取banner" ></property>
+					<property name="successCode" value="0000"></property>
+					<property name="param">
+						<map>
+							
+						</map>
+					</property>
+				</bean>
+				
+			</list>
+		</property>
+	</bean>
+
+</beans>

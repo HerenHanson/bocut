@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://sammor.javaeye.com/schema/tags"  
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"  
+    targetNamespace="http://sammor.javaeye.com/schema/tags"  
+    elementFormDefault="qualified" attributeFormDefault="unqualified">  
+    <xsd:import namespace="http://www.springframework.org/schema/beans" /> 
+
+
+<!--  <xsd:element name="children" type="beans:list">
+
+
+	</xsd:element> -->
+	  	<xsd:simpleType name="PARAM_TYPE">
+    						<xsd:restriction base="xsd:string">
+    							<xsd:enumeration value="String" ></xsd:enumeration>
+    							<xsd:enumeration value="int"  ></xsd:enumeration>
+    							<xsd:enumeration value="long"  ></xsd:enumeration>
+    							<xsd:enumeration value="byte"></xsd:enumeration>
+    							<xsd:enumeration value="short"></xsd:enumeration>
+    							<xsd:enumeration value="boolean"></xsd:enumeration>
+    							<xsd:enumeration value="float"></xsd:enumeration>
+    							<xsd:enumeration value="double"></xsd:enumeration>
+    							<xsd:enumeration value="char"></xsd:enumeration>
+    							<xsd:enumeration value="map"></xsd:enumeration>
+    							<xsd:enumeration value="list"></xsd:enumeration>
+    						</xsd:restriction>
+   </xsd:simpleType>
+  <xsd:complexType name="testParamType" mixed="true">
+
+  
+  <xsd:complexContent>
+  <xsd:extension base="beans:identifiedType">
+<!--   <xsd:sequence>
+  	<xsd:choice minOccurs="0" maxOccurs="unbounded">
+  		<xsd:element  ref="beans:property"></xsd:element>
+  	</xsd:choice>
+  </xsd:sequence>   -->
+
+  
+  	<xsd:group ref="beans:beanElements"/>
+  
+    				<xsd:attribute name="key" type="xsd:string" use="required" /> <!-- 请求参数字段 (key) -->
+    				<xsd:attribute name="name" type="xsd:string" use="required"/><!-- 对请求参数名称 -->
+    				<xsd:attribute name="type" type="PARAM_TYPE" default="String">
+    				
+    				</xsd:attribute><!-- 请求参数类型,默认string -->
+    				<xsd:attribute name="allowEmpty" type="xsd:boolean"/><!-- 请求参数是否可以为空，N：不能为空，Y可以为空 -->
+    				<xsd:attribute name="desc" type="xsd:string"/><!-- 对请求参数的描述 -->
+    				<xsd:attribute name="value" type="xsd:string"/><!-- 请求参数时为默认请求值，返回参数时为示例返回值 -->
+    				<xsd:attribute name="addtion" type="xsd:boolean"/><!-- 新增字段 -->	
+    				<xsd:attribute name="deprecated" type="xsd:boolean"/><!-- 被废弃的字段 -->
+  </xsd:extension>
+  </xsd:complexContent>
+				<!-- 	<xsd:attribute name="children"  type="beans:list"></xsd:attribute>
+					 -->
+ </xsd:complexType>
+
+<xsd:element name="reqParam" type="testParamType"></xsd:element>
+ 
+<xsd:element name="resParam" type="testParamType">
+<!-- 	<xsd:complexType>
+		<xsd:complexContent>
+			<xsd:extension base="testParamType">
+			<xsd:attribute  ref="children"></xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType> -->
+</xsd:element>
+</xsd:schema>
